@@ -14,6 +14,8 @@ const Wrapper = Styled.div`
 
 class App extends React.Component {
 
+	// TODO move this somewhere useful
+
 	load(url) {
 		return Observable.create(observer => {
 			let xhr = new XMLHttpRequest();
@@ -44,8 +46,6 @@ class App extends React.Component {
 		this.load('/api/ping').subscribe(val => {
 			console.log('value: ', val);
 		});
-
-		console.log('RENDER');
 
 		return (
 			<Wrapper>
