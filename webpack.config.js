@@ -22,5 +22,6 @@ module.exports = {
       },
     ],
   },
+  watch: true,
   plugins: [htmlPlugin],
 };
