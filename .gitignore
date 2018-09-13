@@ -1,4 +1,7 @@
 node_modules
 dist
 dist/main.js
+dist/index.html
+dist/index
+dist/main
 src/index.html
