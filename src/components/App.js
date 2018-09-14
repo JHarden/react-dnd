@@ -47,6 +47,10 @@ class App extends React.Component {
 			console.log('value: ', val);
 		});
 
+		this.load('/api/db').subscribe(val => {
+			console.log('value: ', val);
+		});
+
 		return (
 			<Wrapper>
 				<AddTodo />
