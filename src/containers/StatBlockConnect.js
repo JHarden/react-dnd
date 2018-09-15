@@ -9,8 +9,8 @@ const mapStateToProps = state => {
 }
 
 const mapDispatchToProps = dispatch => ({
-  onRoll: stats => {
-    dispatch(roll(stats))
+  onRoll: () => {
+    (roll(dispatch))
   }
 })
 
