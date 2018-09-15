@@ -18,18 +18,18 @@ class StatBlock extends React.Component {
     }
 
     handleClick = () => {
-        this.props.roll({
-            str: 10,
-            dex: 2,
-            con: 12,
-            int: 5,
-            wiz: 7,
-            cha: 12
+        this.props.onRoll({
+            str: this._roll(),
+            dex: this._roll(),
+            con: this._roll(),
+            int: this._roll(),
+            wiz: this._roll(),
+            cha: this._roll()
         });
         console.log('p', this.props)
     }
 
-    roll = () => {
+    _roll = () => {
         const roll = (1 + Math.floor(Math.random() * 6)) + (1 + Math.floor(Math.random() * 6)) + (1 + Math.floor(Math.random() * 6))
         return roll;
     }
@@ -38,12 +38,12 @@ class StatBlock extends React.Component {
 
         return (
             <Panel>
-                <Stat name="STR" value={this.roll()} />
-                <Stat name="DEX" value={this.roll()} />
-                <Stat name="CON" value={this.roll()} />
-                <Stat name="INT" value={this.roll()} />
-                <Stat name="WIZ" value={this.roll()} />
-                <Stat name="CHA" value={this.roll()} />
+                <Stat name="STR" value={this.props.activeRoll.stats.str} />
+                <Stat name="DEX" value={this.props.activeRoll.stats.dex} />
+                <Stat name="CON" value={this.props.activeRoll.stats.con} />
+                <Stat name="INT" value={this.props.activeRoll.stats.int} />
+                <Stat name="WIZ" value={this.props.activeRoll.stats.wiz} />
+                <Stat name="CHA" value={this.props.activeRoll.stats.cha} />
                 <div onClick={this.handleClick}>
                     CLICK ME
                 </div>
@@ -53,9 +53,8 @@ class StatBlock extends React.Component {
 }
 
 StatBlock.propTypes = {
-    roll: PropTypes.func.isRequired,
-    stats: PropTypes.object.isRequired,
-    selected: PropTypes.object.isRequired
+    onRoll: PropTypes.func.isRequired,
+    activeRoll: PropTypes.object.isRequired
 }
 
 export default StatBlock;

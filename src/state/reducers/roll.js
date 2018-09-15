@@ -1,12 +1,12 @@
 
 const initialState = {
     stats:  {
-      str: undefined,
-      dex: undefined,
-      con: undefined,
-      int: undefined,
-      wiz: undefined,
-      cha: undefined,
+      str: 8,
+      dex: 8,
+      con: 8,
+      int: 8,
+      wiz: 8,
+      cha: 8,
     }
 }
 
@@ -14,7 +14,6 @@ function roll(state = initialState, action) {
 
     switch(action.type) {
         case 'ROLL':
-        console.log('r', action);
         return Object.assign({}, state, {
             stats: action.stats
         })
