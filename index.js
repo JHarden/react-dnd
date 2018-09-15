@@ -15,10 +15,22 @@ express()
   .get('/api/ping', (req, res) => {
     res.status(200).json("Welcome to our restful API");
   })
-  .get('/api/db', async (req, res) => {
+  .get('/api/legal', async (req, res) => {
     try {
       const client = await pool.connect()
       const result = await client.query('SELECT * FROM legal')
+      const results = { 'results': (result) ? result.rows : null }
+      res.json({ results })
+      client.release()
+    } catch (err) {
+      console.error(err)
+      res.send('Error' + err)
+    }
+  })
+  .get('/api/races', async (req, res) => {
+    try {
+      const client = await pool.connect()
+      const result = await client.query('SELECT * FROM races')
       const results = { 'results': (result) ? result.rows : null }
       res.json({ results })
       client.release()
