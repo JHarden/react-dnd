@@ -47,7 +47,7 @@ class App extends React.Component {
 			console.log('value: ', val);
 		});
 
-		this.load('/api/docs_legal').subscribe(val => {
+		this.load('/api/legal').subscribe(val => {
 			console.log('value: ', val);
 		});
 
