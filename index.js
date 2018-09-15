@@ -19,8 +19,7 @@ express()
     try {
       const client = await pool.connect()
       const result = await client.query('SELECT * FROM legal')
-      const results = { 'results': (result) ? result.rows : null }
-      res.json({ results })
+      res.json({ result })
       client.release()
     } catch (err) {
       console.error(err)
@@ -31,8 +30,7 @@ express()
     try {
       const client = await pool.connect()
       const result = await client.query('SELECT * FROM races')
-      const results = { 'results': (result) ? result.rows : null }
-      res.json({ results })
+      res.json({ result })
       client.release()
     } catch (err) {
       console.error(err)
