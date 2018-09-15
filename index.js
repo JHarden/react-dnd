@@ -18,7 +18,7 @@ express()
   .get('/api/legal', async (req, res) => {
     try {
       const client = await pool.connect()
-      const result = await client.query('SELECT * FROM legal')
+      const result = await client.query('SELECT * FROM docs_legal')
       res.json({ result })
       client.release()
     } catch (err) {
@@ -26,10 +26,10 @@ express()
       res.send('Error' + err)
     }
   })
-  .get('/api/races', async (req, res) => {
+  .get('/api/race', async (req, res) => {
     try {
       const client = await pool.connect()
-      const result = await client.query('SELECT * FROM races')
+      const result = await client.query('SELECT * FROM race')
       res.json({ result })
       client.release()
     } catch (err) {
