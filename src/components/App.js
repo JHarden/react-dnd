@@ -1,15 +1,16 @@
 import React from 'react'
-import Footer from './Footer'
-import AddTodo from '../containers/AddTodo'
-import VisibleTodoList from '../containers/VisibleTodoList'
+// import Footer from './Footer'
+// import AddTodo from '../containers/AddTodo'
+// import VisibleTodoList from '../containers/VisibleTodoList'
 import Styled from 'styled-components'
-import StatBlock from './statblock/StatBlock';
-import {Observable} from 'rxjs';
+import { Observable } from 'rxjs';
+import StatBlockConnect from '../containers/StatBlockConnect';
 
 
 const Wrapper = Styled.div`
-  border: 1px solid red;
-  background-color: grey;
+  border: 1px solid grey;
+  display: flex;
+  flex-direction: column;
 `;
 
 class App extends React.Component {
@@ -43,24 +44,18 @@ class App extends React.Component {
 
 	render() {
 
-		this.load('/api/ping').subscribe(val => {
-			console.log('value: ', val);
-		});
-
-		this.load('/api/legal').subscribe(val => {
-			console.log('value: ', val);
-		});
-
-		this.load('/api/race').subscribe(val => {
-			console.log('value: ', val);
-		});
+		// this.load('/api/race').subscribe(val => {
+		// 	console.log('value: ', val);
+		// });
 
 		return (
 			<Wrapper>
-				<AddTodo />
-				<VisibleTodoList />
-				<StatBlock />
-				<Footer />
+				{/* <div>
+					<AddTodo />
+					<VisibleTodoList />
+					<Footer />
+				</div> */}
+				<StatBlockConnect />
 			</Wrapper>
 		)
 	}
