@@ -16,7 +16,8 @@
   "env": {
     "browser": true,
     "mocha": true,
-    "node": true
+    "node": true,
+    "jest/globals": true
   },
   "rules": {
     "valid-jsdoc": 2,
@@ -28,6 +29,7 @@
   },
   "plugins": [
     "import",
-    "react"
+    "react",
+    "jest"
   ]
 }
