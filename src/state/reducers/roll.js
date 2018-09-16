@@ -1,5 +1,6 @@
 
 const initialState = {
+    name: '',
     stats:  {
       str: 8,
       dex: 8,
@@ -7,7 +8,9 @@ const initialState = {
       int: 8,
       wiz: 8,
       cha: 8,
-    }
+    },
+    class: {},
+    race: {}
 }
 
 function roll(state = initialState, action) {

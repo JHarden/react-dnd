@@ -8,9 +8,10 @@ import StatBlockConnect from '../containers/StatBlockConnect';
 
 
 const Wrapper = Styled.div`
-  border: 1px solid grey;
   display: flex;
   flex-direction: column;
+  font-family: 'Raleway', sans-serif;
+
 `;
 
 class App extends React.Component {
@@ -44,17 +45,8 @@ class App extends React.Component {
 
 	render() {
 
-		// this.load('/api/race').subscribe(val => {
-		// 	console.log('value: ', val);
-		// });
-
 		return (
 			<Wrapper>
-				{/* <div>
-					<AddTodo />
-					<VisibleTodoList />
-					<Footer />
-				</div> */}
 				<StatBlockConnect />
 			</Wrapper>
 		)

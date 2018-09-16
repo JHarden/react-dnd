@@ -4,38 +4,36 @@ import Stat from './Stat/Stat';
 import PropTypes from 'prop-types'
 
 const Panel = Styled.div`
-    outline: 1px solid grey;
-    width: 50px;
+    width: 150px;
+    font-size: 25px;
+    padding: 20px;
     display: flex;
     flex-direction: column;
     height: auto;
 `;
 
+const RollButton = Styled.div`
+    cursor: pointer;
+`;
+
 class StatBlock extends React.Component {
+
+    selectedOption = 'hardcore';
 
     constructor(props) {
         super(props)
     }
 
     handleClick = () => {
-        this.props.onRoll({
-            str: this._roll(),
-            dex: this._roll(),
-            con: this._roll(),
-            int: this._roll(),
-            wiz: this._roll(),
-            cha: this._roll()
-        });
-        console.log('p', this.props)
+        this.props.onRoll(this.selectedOption);
     }
 
-    _roll = () => {
-        const roll = (1 + Math.floor(Math.random() * 6)) + (1 + Math.floor(Math.random() * 6)) + (1 + Math.floor(Math.random() * 6))
-        return roll;
+    handleChange = (event) => {
+        this.selectedOption = event.target.value;
+        this.props.onRoll(event.target.value);
     }
 
     render() {
-
         return (
             <Panel>
                 <Stat name="STR" value={this.props.activeRoll.stats.str} />
@@ -44,9 +42,13 @@ class StatBlock extends React.Component {
                 <Stat name="INT" value={this.props.activeRoll.stats.int} />
                 <Stat name="WIZ" value={this.props.activeRoll.stats.wiz} />
                 <Stat name="CHA" value={this.props.activeRoll.stats.cha} />
-                <div onClick={this.handleClick}>
-                    CLICK ME
-                </div>
+                <RollButton onClick={this.handleClick}>
+                    ROLL!
+                </RollButton>
+                <select value={this.selectedOption} onChange={this.handleChange}>
+                    <option value="hardcore">hardcore (3d6)</option>
+                    <option value="classic">classic (4d6d1)</option>
+                </select>
             </Panel>
         );
     }
@@ -54,7 +56,8 @@ class StatBlock extends React.Component {
 
 StatBlock.propTypes = {
     onRoll: PropTypes.func.isRequired,
-    activeRoll: PropTypes.object.isRequired
+    activeRoll: PropTypes.object.isRequired,
+    selectedOption: PropTypes.string.isRequired
 }
 
 export default StatBlock;
