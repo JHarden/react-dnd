@@ -22,6 +22,7 @@ class StatBlock extends React.Component {
 
     constructor(props) {
         super(props)
+        console.log('props: ', this.props);
     }
 
     handleClick = () => {
@@ -34,6 +35,7 @@ class StatBlock extends React.Component {
     }
 
     render() {
+        console.log('render props', this.props);
         return (
             <Panel>
                 <Stat name="STR" value={this.props.activeRoll.stats.str} />
@@ -57,7 +59,6 @@ class StatBlock extends React.Component {
 StatBlock.propTypes = {
     onRoll: PropTypes.func.isRequired,
     activeRoll: PropTypes.object.isRequired,
-    selectedOption: PropTypes.string.isRequired
 }
 
 export default StatBlock;
