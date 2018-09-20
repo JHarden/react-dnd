@@ -34,6 +34,8 @@ class StatBlock extends React.Component {
     }
 
     render() {
+
+        console.log('activeroll: ', this.props.activeRoll);
         return (
             <Panel>
                 <Stat name="STR" value={this.props.activeRoll.stats.str} />

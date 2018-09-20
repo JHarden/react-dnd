@@ -2,11 +2,11 @@
 const _roll = (type) => {
 
 	let result;
-	if (type === 'hardcore'){
+	if (type === 'hardcore') {
 		result = (1 + Math.floor(Math.random() * 6)) + (1 + Math.floor(Math.random() * 6)) + (1 + Math.floor(Math.random() * 6))
-	}else {
+	} else {
 		let rolls = [];
-		for(let i = 0; i < 4; i++) {
+		for (let i = 0; i < 4; i++) {
 			rolls.push(1 + Math.floor(Math.random() * 6));
 		}
 		let min = Math.min(...rolls);
@@ -17,15 +17,18 @@ const _roll = (type) => {
 
 export const roll = (dispatch, type) => {
 	const stats = {
-		str: _roll(type),
-		dex: _roll(type),
-		con: _roll(type),
-		int: _roll(type),
-		wiz: _roll(type),
-		cha: _roll(type)
+		str: _roll(type), dex: _roll(type), con: _roll(type), int: _roll(type), wiz: _roll(type), cha: _roll(type)
 	}
 	dispatch({
-		type: "ROLL",
+		type: 'ROLL',
 		stats
 	});
+}
+
+export const setName = (dispatch, name) => {
+
+	dispatch({
+		type: 'SET_NAME',
+		name
+	})
 }
