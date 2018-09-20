@@ -1,6 +1,6 @@
 import React from 'react';
 import Styled from 'styled-components';
-import Stat from './Stat/Stat';
+import Stat from '../Stat/Stat';
 import PropTypes from 'prop-types'
 
 const Panel = Styled.div`
@@ -22,7 +22,6 @@ class StatBlock extends React.Component {
 
     constructor(props) {
         super(props)
-        console.log('props: ', this.props);
     }
 
     handleClick = () => {
@@ -35,7 +34,6 @@ class StatBlock extends React.Component {
     }
 
     render() {
-        console.log('render props', this.props);
         return (
             <Panel>
                 <Stat name="STR" value={this.props.activeRoll.stats.str} />

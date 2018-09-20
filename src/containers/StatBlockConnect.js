@@ -1,6 +1,6 @@
 import { connect } from 'react-redux'
 import { roll } from '../state/actions'
-import StatBlock from '../components/statblock/StatBlock'
+import StatBlock from '../components/statBlock/StatBlock'
 
 const mapStateToProps = state => {
   return {
