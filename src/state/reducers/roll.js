@@ -1,28 +1,26 @@
 
 const initialState = {
-    name: '',
-    stats:  {
+    attributes:  {
       str: 8,
       dex: 8,
       con: 8,
       int: 8,
       wiz: 8,
       cha: 8,
-    },
-    class: {},
-    race: {}
+    }
 }
 
-function roll(state = initialState, action) {
+function characterStats(state = initialState, action) {
 
     switch(action.type) {
         case 'ROLL':
+        console.log('action: ', action);
         return Object.assign({}, state, {
-            stats: action.stats
+            attributes: action.attributes
         })
         default: 
             return state;
     }
 }
 
-export default roll
+export default characterStats

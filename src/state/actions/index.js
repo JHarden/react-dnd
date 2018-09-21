@@ -16,12 +16,12 @@ const _roll = (type) => {
 }
 
 export const roll = (dispatch, type) => {
-	const stats = {
+	const attributes = {
 		str: _roll(type), dex: _roll(type), con: _roll(type), int: _roll(type), wiz: _roll(type), cha: _roll(type)
 	}
 	dispatch({
 		type: 'ROLL',
-		stats
+		attributes
 	});
 }
 

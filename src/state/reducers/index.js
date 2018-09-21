@@ -1,6 +1,6 @@
 import { combineReducers } from 'redux'
-import roll from './roll'
+import characterStats from './roll'
 
 export default combineReducers({
-  roll
+  characterStats
 })

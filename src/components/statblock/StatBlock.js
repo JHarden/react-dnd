@@ -35,15 +35,15 @@ class StatBlock extends React.Component {
 
     render() {
 
-        console.log('activeroll: ', this.props.activeRoll);
+        console.log('render: ', this.props.characterStats);
         return (
             <Panel>
-                <Stat name="STR" value={this.props.activeRoll.stats.str} />
-                <Stat name="DEX" value={this.props.activeRoll.stats.dex} />
-                <Stat name="CON" value={this.props.activeRoll.stats.con} />
-                <Stat name="INT" value={this.props.activeRoll.stats.int} />
-                <Stat name="WIZ" value={this.props.activeRoll.stats.wiz} />
-                <Stat name="CHA" value={this.props.activeRoll.stats.cha} />
+                <Stat name="STR" value={this.props.characterStats.attributes.str} />
+                <Stat name="DEX" value={this.props.characterStats.attributes.dex} />
+                <Stat name="CON" value={this.props.characterStats.attributes.con} />
+                <Stat name="INT" value={this.props.characterStats.attributes.int} />
+                <Stat name="WIZ" value={this.props.characterStats.attributes.wiz} />
+                <Stat name="CHA" value={this.props.characterStats.attributes.cha} />
                 <RollButton onClick={this.handleClick}>
                     ROLL!
                 </RollButton>
@@ -58,7 +58,7 @@ class StatBlock extends React.Component {
 
 StatBlock.propTypes = {
     onRoll: PropTypes.func.isRequired,
-    activeRoll: PropTypes.object.isRequired,
+    characterStats: PropTypes.object.isRequired,
 }
 
 export default StatBlock;
