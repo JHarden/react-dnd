@@ -4,8 +4,9 @@ import React from 'react'
 // import VisibleTodoList from '../containers/VisibleTodoList'
 import Styled from 'styled-components'
 import { Observable } from 'rxjs';
-import StatBlockConnect from '../containers/StatBlockConnect';
 
+import StatBlockConnect from '../containers/StatBlockConnect';
+import RaceSelector from '../components/RaceSelector/RaceSelector';
 
 const Wrapper = Styled.div`
   display: flex;
@@ -48,6 +49,7 @@ class App extends React.Component {
 		return (
 			<Wrapper>
 				<StatBlockConnect />
+				<RaceSelector />
 			</Wrapper>
 		)
 	}

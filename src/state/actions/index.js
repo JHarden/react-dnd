@@ -31,3 +31,10 @@ export const setName = (dispatch, name) => {
 		name
 	})
 }
+
+export const getRaceData = (dispatch, name) => {
+	dispatch({
+		type: 'GET_RACE_DATA',
+		name
+	})
+}
