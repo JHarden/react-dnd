@@ -1,6 +1,6 @@
 import { connect } from 'react-redux'
 import { roll, setName } from '../state/actions'
-import StatBlock from '../components/statBlock/StatBlock'
+import StatBlock from '../components/StatBlock/StatBlock'
 
 const mapStateToProps = state => {
   console.log('mstp: ', state);
