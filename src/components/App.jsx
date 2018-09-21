@@ -6,7 +6,7 @@ import Styled from 'styled-components'
 import { Observable } from 'rxjs';
 
 import StatBlockConnect from '../containers/StatBlockConnect';
-import RaceSelector from '../components/RaceSelector/RaceSelector';
+import RaceSelector from './RaceSelector/RaceSelector';
 
 const Wrapper = Styled.div`
   display: flex;
