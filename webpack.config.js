@@ -23,4 +23,7 @@ module.exports = {
     ],
   },
   plugins: [htmlPlugin],
+  watchOptions: {
+    poll: true
+  },
 };

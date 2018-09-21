@@ -8,7 +8,7 @@
   },
   "scripts": {
     "build": "webpack -p",
-    "build-dev": "webpack --watch",
+    "build-dev": "webpack -d --watch",
     "lint": "npm run lint",
     "start": "node index.js",
     "heroku-postbuild": "webpack -p",

@@ -7,14 +7,14 @@ const initialState = {
       int: 8,
       wiz: 8,
       cha: 8,
-    }
+    },
+    hitPoints: 8
 }
 
 function characterStats(state = initialState, action) {
 
     switch(action.type) {
         case 'ROLL':
-        console.log('action: ', action);
         return Object.assign({}, state, {
             attributes: action.attributes
         })

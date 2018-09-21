@@ -19,6 +19,7 @@ const RollButton = Styled.div`
 class StatBlock extends React.Component {
 
     selectedOption = 'hardcore';
+    _name = undefined;
 
     constructor(props) {
         super(props)
@@ -33,9 +34,12 @@ class StatBlock extends React.Component {
         this.props.onRoll(event.target.value);
     }
 
-    render() {
+    handleNameChange = (event) => {
+        console.log('name : ', event.target.value);
+        this.props.onNameChange(event.target.value);
+    }
 
-        console.log('render: ', this.props.characterStats);
+    render() {
         return (
             <Panel>
                 <Stat name="STR" value={this.props.characterStats.attributes.str} />
@@ -51,6 +55,9 @@ class StatBlock extends React.Component {
                     <option value="hardcore">hardcore (3d6)</option>
                     <option value="classic">classic (4d6d1)</option>
                 </select>
+                <div>
+                    <input type="text" value={this._name} onChange={this.handleNameChange}></input>
+                </div>
             </Panel>
         );
     }
@@ -59,6 +66,7 @@ class StatBlock extends React.Component {
 StatBlock.propTypes = {
     onRoll: PropTypes.func.isRequired,
     characterStats: PropTypes.object.isRequired,
+    onNameChange: PropTypes.func.isRequired
 }
 
 export default StatBlock;

@@ -26,7 +26,6 @@ export const roll = (dispatch, type) => {
 }
 
 export const setName = (dispatch, name) => {
-
 	dispatch({
 		type: 'SET_NAME',
 		name
