@@ -9,7 +9,7 @@
   "scripts": {
     "build": "webpack -p",
     "build-dev": "webpack -d --watch",
-    "lint": "npm run lint",
+    "lint": "eslint --ext .jsx src",
     "start": "node index.js",
     "heroku-postbuild": "webpack -p",
     "test": "jest"

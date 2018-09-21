@@ -22,14 +22,33 @@
   "rules": {
     "valid-jsdoc": 2,
     "react/jsx-uses-react": 1,
+    "react/jsx-uses-vars": 2,
     "react/jsx-no-undef": 2,
     "react/jsx-wrap-multilines": 2,
     "react/no-string-refs": 0,
-    "no-console": "off"
+    "no-console": "off",
+    "rules": {
+      "import/no-unresolved": [
+        2,
+        {
+          "caseSensitive": false
+        }
+      ]
+    }
   },
   "plugins": [
     "import",
     "react",
     "jest"
-  ]
+  ],
+  "settings": {
+    "import/resolver": {
+      "node": {
+        "extensions": [
+          ".js",
+          ".jsx"
+        ]
+      }
+    }
+  }
 }
