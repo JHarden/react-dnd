@@ -1,6 +1,7 @@
 
 const initialState = {
-    name: 'Adventurer'
+    name: 'Adventurer',
+    race: 'Human'
 }
 
 function characterGeneral(state = initialState, action) {
@@ -8,6 +9,10 @@ function characterGeneral(state = initialState, action) {
         case 'SET_NAME':
         return Object.assign({}, state, {
             name: action.name
+        })
+        case 'SET_RACE':
+        return Object.assign({}, state, {
+            race: action.race
         })
         default: 
             return state;

@@ -5,6 +5,7 @@ class RaceSelector extends React.Component {
 
 	_raceDataObject = {};
 	_raceList = [];
+	selectedRace;
 
 	constructor(props) {
 		super(props)
@@ -13,6 +14,11 @@ class RaceSelector extends React.Component {
 
 	_getRaceKeys = (races) => {
 		return Object.keys(races);
+	}
+
+	handleChange = (event) => {
+		this.selectedRace = event.target.value;
+		this.props.onRaceChange(event.target.value);
 	}
 
 	render() {
@@ -24,12 +30,11 @@ class RaceSelector extends React.Component {
 
 			return (
 				<div>
-					<select>
+					<select onChange={this.handleChange} value={this.selectedRace}>
 						{raceKeys.map((option, key) => <option key={key}>{option}</option>)}
 					</select>
 				</div>
 			)
-
 
 		} else {
 			return (<div>LOADING...</div>)
@@ -41,6 +46,7 @@ class RaceSelector extends React.Component {
 
 RaceSelector.propTypes = {
 	_initRaceState: PropTypes.func,
+	onRaceChange: PropTypes.func,
 	_raceData: PropTypes.object
 }
 
