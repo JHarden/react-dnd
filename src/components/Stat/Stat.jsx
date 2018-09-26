@@ -16,7 +16,6 @@ const StatRow = Styled.div`
 class Stat extends React.Component {
 
     render() {
-
         return (
             <StatRow>
                 <div>{this.props.name}</div>

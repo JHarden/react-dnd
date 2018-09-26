@@ -35,7 +35,6 @@ class StatBlock extends React.Component {
     }
 
     handleNameChange = (event) => {
-        console.log('name : ', event.target.value);
         this.props.onNameChange(event.target.value);
     }
 

@@ -1,9 +1,6 @@
 import React from 'react';
 import { Observable } from 'rxjs';
 
-// import PropTypes from 'prop-types';
-// import Styled from 'styled-components';
-
 class RaceSelector extends React.Component {
 
     load(url) {
@@ -31,12 +28,7 @@ class RaceSelector extends React.Component {
 		});
 	}
 
-    // getRaceData() {
-    //     console.log('d:', data);
-    // }
-
     componentDidMount() {
-        
         const data = this.load('/api/race');
         data.subscribe((e) => {
             console.log('subscribe: ', e);
@@ -52,11 +44,5 @@ class RaceSelector extends React.Component {
         )
     }
 }
-
-
-// Stat.propTypes = {
-//     name: PropTypes.string,
-//     value: PropTypes.number
-// }
 
 export default RaceSelector;

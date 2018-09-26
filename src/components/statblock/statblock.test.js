@@ -2,18 +2,7 @@ import React from 'react';
 import StatBlock from './StatBlock';
 import renderer from 'react-test-renderer';
 
-const mockFn = () => {
-    return {
-        attributes: {
-            str:9,
-            dex:9,
-            con:19,
-            int:20,
-            wiz:15,
-            cha:18
-        }
-    }
-};
+const mockFn = () => {}
 
 const mockCharacterStats = {
     attributes: {
