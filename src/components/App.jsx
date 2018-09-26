@@ -2,7 +2,7 @@ import React from 'react'
 import Styled from 'styled-components'
 
 import StatBlockConnect from '../containers/StatBlockConnect';
-import RaceSelector from './RaceSelector/RaceSelector';
+import RaceSelectorConnect from '../containers/RaceSelectConnect';
 
 const Wrapper = Styled.div`
   display: flex;
@@ -17,7 +17,7 @@ class App extends React.Component {
 		return (
 			<Wrapper>
 				<StatBlockConnect />
-				<RaceSelector />
+				<RaceSelectorConnect />
 			</Wrapper>
 		)
 	}

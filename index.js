@@ -30,7 +30,7 @@ express()
     try {
       const client = await pool.connect()
       const result = await client.query('SELECT * FROM race')
-      res.json(result.rows)
+      res.json(result.rows[0].content)
       client.release()
     } catch (err) {
       console.error(err)

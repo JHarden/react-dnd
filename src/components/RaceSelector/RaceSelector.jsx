@@ -1,48 +1,47 @@
 import React from 'react';
-import { Observable } from 'rxjs';
+import PropTypes from 'prop-types';
 
 class RaceSelector extends React.Component {
 
-    load(url) {
-		return Observable.create(observer => {
-			let xhr = new XMLHttpRequest();
+	_raceDataObject = {};
+	_raceList = [];
 
-			let onload = () => {
-				if (xhr.status === 200) {
-					let data = JSON.parse(xhr.responseText);
-					observer.next(data);
-					observer.complete();
-				} else {
-					observer.error(xhr.statusText);
-				}
-			};
-			xhr.addEventListener('load', onload);
-
-			xhr.open('GET', url);
-			xhr.send();
-
-			return () => {
-				xhr.removeEventListener('load', onload);
-				xhr.abort();
-			};
-		});
+	constructor(props) {
+		super(props)
+		this.props._initRaceState();
 	}
 
-    componentDidMount() {
-        const data = this.load('/api/race');
-        data.subscribe((e) => {
-            console.log('subscribe: ', e);
-        })
-    }
+	_getRaceKeys = (races) => {
+		return Object.keys(races);
+	}
 
-    render() {
+	render() {
+		const races = this.props._raceData && this.props._raceData.Races || undefined;
 
-        return (
-            <div>
-                Race Data...
-            </div>
-        )
-    }
+		if (races !== undefined) {
+
+			const raceKeys  = this._getRaceKeys(races._race_data);
+
+			return (
+				<div>
+					<select>
+						{raceKeys.map((option, key) => <option key={key}>{option}</option>)}
+					</select>
+				</div>
+			)
+
+
+		} else {
+			return (<div>LOADING...</div>)
+		}
+
+	}
+}
+
+
+RaceSelector.propTypes = {
+	_initRaceState: PropTypes.func,
+	_raceData: PropTypes.object
 }
 
 export default RaceSelector;
