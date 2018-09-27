@@ -3,6 +3,7 @@ import Styled from 'styled-components'
 
 import StatBlockConnect from '../containers/StatBlockConnect';
 import RaceSelectorConnect from '../containers/RaceSelectConnect';
+import RacialTraitsConnect from '../containers/RacialTraitsConnect';
 
 const Wrapper = Styled.div`
   display: flex;
@@ -18,6 +19,7 @@ class App extends React.Component {
 			<Wrapper>
 				<StatBlockConnect />
 				<RaceSelectorConnect />
+				<RacialTraitsConnect />
 			</Wrapper>
 		)
 	}

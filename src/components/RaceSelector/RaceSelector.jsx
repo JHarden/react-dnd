@@ -22,11 +22,11 @@ class RaceSelector extends React.Component {
 	}
 
 	render() {
-		const races = this.props._raceData && this.props._raceData.Races || undefined;
+		const races = this.props._raceData && this.props._raceData.data || undefined;
 
 		if (races !== undefined) {
 
-			const raceKeys  = this._getRaceKeys(races._race_data);
+			const raceKeys = this._getRaceKeys(races.races);
 
 			return (
 				<div>
@@ -39,7 +39,6 @@ class RaceSelector extends React.Component {
 		} else {
 			return (<div>LOADING...</div>)
 		}
-
 	}
 }
 
