@@ -31,7 +31,8 @@ class RacialTraits extends React.Component {
 			const _srData = raceTraits.subraces[race];
 			return(
 				<div key={index}>
-					<div>{race}</div>
+					<h2>{race}</h2>
+					<div>{_srData.blurb}</div>
 					{this.getSelectedRaceTraits(_srData.content)}
 				</div>
 			)
