@@ -1,5 +1,5 @@
 import React from 'react';
-// import PropTypes from 'prop-types';
+import PropTypes from 'prop-types';
 
 class RacialTraits extends React.Component {
 
@@ -8,15 +8,20 @@ class RacialTraits extends React.Component {
 	}
 
 	render() {
-        return (<div>Racial Traits</div>)
+		return (
+			<div>
+				<div>{this.props.selectedRace}</div>
+				<div>{this.props.selectedRaceTraits &&
+					this.props.selectedRaceTraits.traits.blurb}</div>
+			</div>
+		)
 
 	}
 }
 
 RacialTraits.propTypes = {
-	// _initRaceState: PropTypes.func,
-	// onRaceChange: PropTypes.func,
-	// _raceData: PropTypes.object
+	selectedRace: PropTypes.string,
+	selectedRaceTraits: PropTypes.object
 }
 
 export default RacialTraits;
