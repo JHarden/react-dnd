@@ -7,12 +7,52 @@ class RacialTraits extends React.Component {
 		super(props)
 	}
 
+	getSelectedRaceTraits = (content) => {
+		const _content = Object.keys(content);
+		const info = _content.map((title, index) => {
+			return (
+				<div key={index}>
+					<h2>{title}</h2>
+					<p>{content[title]}</p>
+				</div>
+			)
+		})
+		return (
+			<div>
+				<div>{this.props.selectedRaceTraits.traits.blurb}</div>
+				{info}
+			</div>
+		)
+	}
+
+	getSubRace = (raceTraits) => {
+		const subraces = Object.keys(raceTraits.subraces)
+		const info = subraces.map((race, index) => {
+			const _srData = raceTraits.subraces[race];
+			return(
+				<div key={index}>
+					<div>{race}</div>
+					{this.getSelectedRaceTraits(_srData.content)}
+				</div>
+			)
+		})
+
+		return(<div>{info}</div>);
+	}
+
 	render() {
+		const traits = this.props.selectedRaceTraits && this.props.selectedRaceTraits.traits;
 		return (
 			<div>
 				<div>{this.props.selectedRace}</div>
-				<div>{this.props.selectedRaceTraits &&
-					this.props.selectedRaceTraits.traits.blurb}</div>
+				<div>
+					{this.props.selectedRaceTraits &&
+						<div>
+							{this.getSelectedRaceTraits(traits.content)}
+							{traits.subraces && this.getSubRace(traits)}
+						</div>
+					}
+				</div>
 			</div>
 		)
 
