@@ -44,7 +44,6 @@ class RacialTraits extends React.Component {
 
 	render() {
 		const traits = this.props.selectedRaceTraits && this.props.selectedRaceTraits.traits;
-		console.log('T', traits);
 		return (
 			<div>
 				<div>{this.props.selectedRace}</div>
