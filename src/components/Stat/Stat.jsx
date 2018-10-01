@@ -13,13 +13,26 @@ const StatRow = Styled.div`
     margin: 10px 0;
 `;
 
+const PosMod = Styled.div`
+    color: green;
+`;
+const NegMod = Styled.div`
+    color: red;
+`;
+
 class Stat extends React.Component {
+
+    calcAbilityModifier = (value) => {
+        const mod = Math.floor((value - 10) / 2);
+        return (<div>{mod > 0 && <PosMod> +{mod}</PosMod> || <NegMod>{mod}</NegMod>} </div>)
+    }
 
     render() {
         return (
             <StatRow>
                 <div>{this.props.name}</div>
                 <div>{this.props.value}</div>
+                <div>{this.calcAbilityModifier(this.props.value)}</div>
             </StatRow>
         )
     }

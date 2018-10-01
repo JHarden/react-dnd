@@ -1,5 +1,5 @@
 import { connect } from 'react-redux'
-import RacialTraits from '../components/RaceTraits/RacialTraits'
+import RacialTraits from '../components/RacialTraits/RacialTraits'
 
 const mapStateToProps = state => {
 

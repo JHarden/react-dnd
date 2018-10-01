@@ -7,9 +7,15 @@ import RacialTraitsConnect from '../containers/RacialTraitsConnect';
 
 const Wrapper = Styled.div`
   display: flex;
-  flex-direction: column;
+  flex-direction: row;
   font-family: 'Raleway', sans-serif;
 
+`;
+
+const StatWrapper = Styled.div`
+	display: flex;
+	flex-direction: column;
+	font-family: 'Raleway', sans-serif;
 `;
 
 class App extends React.Component {
@@ -17,9 +23,13 @@ class App extends React.Component {
 	render() {
 		return (
 			<Wrapper>
-				<StatBlockConnect />
-				<RaceSelectorConnect />
-				<RacialTraitsConnect />
+				<div>
+					<StatBlockConnect />
+				</div>
+				<StatWrapper>
+					<RaceSelectorConnect />
+					<RacialTraitsConnect />
+				</StatWrapper>
 			</Wrapper>
 		)
 	}

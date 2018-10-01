@@ -1,5 +1,6 @@
 import React from 'react';
 import PropTypes from 'prop-types';
+import RacialAttributes from './RacialAttributes/RacialAttributes';
 
 class RacialTraits extends React.Component {
 
@@ -43,9 +44,11 @@ class RacialTraits extends React.Component {
 
 	render() {
 		const traits = this.props.selectedRaceTraits && this.props.selectedRaceTraits.traits;
+		console.log('T', traits);
 		return (
 			<div>
 				<div>{this.props.selectedRace}</div>
+				<RacialAttributes selectedRacialAttributes={traits}/>
 				<div>
 					{this.props.selectedRaceTraits &&
 						<div>
