@@ -25,6 +25,13 @@ export const roll = (dispatch, type) => {
 	});
 }
 
+export const setStat = (dispatch, statData) => {
+	dispatch({
+		type: 'SET_STAT',
+		statData
+	})
+}
+
 export const setName = (dispatch, name) => {
 	dispatch({
 		type: 'SET_NAME',
@@ -32,10 +39,14 @@ export const setName = (dispatch, name) => {
 	})
 }
 
-export const setRace = (dispatch, race) => {
+export const setRace = (dispatch, obj) => {
+	console.log('setRace: ', obj.obj);
+	const stats = obj.obj.traits.attributes.ability_racial;
+	setStat(dispatch, stats);
+
 	dispatch({
 		type: 'SET_RACE',
-		race
+		race: obj
 	})
 }
 

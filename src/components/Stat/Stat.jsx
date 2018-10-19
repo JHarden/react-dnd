@@ -33,6 +33,7 @@ class Stat extends React.Component {
                 <div>{this.props.name}</div>
                 <div>{this.props.value}</div>
                 <div>{this.calcAbilityModifier(this.props.value)}</div>
+                <div>{this.props.racialBonus}</div>
             </StatRow>
         )
     }
@@ -40,7 +41,8 @@ class Stat extends React.Component {
 
 Stat.propTypes = {
     name: PropTypes.string,
-    value: PropTypes.number
+    value: PropTypes.number,
+    racialBonus: PropTypes.number
 }
 
 export default Stat;

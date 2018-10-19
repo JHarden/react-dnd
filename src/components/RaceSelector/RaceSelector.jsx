@@ -18,7 +18,8 @@ class RaceSelector extends React.Component {
 
 	handleChange = (event) => {
 		this.selectedRace = event.target.value;
-		this.props.onRaceChange(event.target.value);
+		const raceSpecificData = this.props._raceData.data.races[event.target.value];
+		this.props.onRaceChange(event.target.value, raceSpecificData);
 	}
 
 	render() {

@@ -39,23 +39,24 @@ class StatBlock extends React.Component {
     }
 
     render() {
+        const {stats , mods} = this.props;
         return (
             <Panel>
-                <Stat name="STR" value={this.props.characterStats.attributes.str} />
-                <Stat name="DEX" value={this.props.characterStats.attributes.dex} />
-                <Stat name="CON" value={this.props.characterStats.attributes.con} />
-                <Stat name="INT" value={this.props.characterStats.attributes.int} />
-                <Stat name="WIZ" value={this.props.characterStats.attributes.wiz} />
-                <Stat name="CHA" value={this.props.characterStats.attributes.cha} />
+                <Stat name='STR' value={stats.str + mods.str} racialBonus={mods.str}/>
+                <Stat name='DEX' value={stats.dex + mods.dex} racialBonus={mods.dex}/>
+                <Stat name='CON' value={stats.con + mods.con} racialBonus={mods.con}/>
+                <Stat name='INT' value={stats.int + mods.int} racialBonus={mods.int}/>
+                <Stat name='WIZ' value={stats.wiz + mods.wiz} racialBonus={mods.wiz}/>
+                <Stat name='CHA' value={stats.cha + mods.cha} racialBonus={mods.cha}/>
                 <RollButton onClick={this.handleClick}>
                     ROLL!
                 </RollButton>
                 <select value={this.selectedOption} onChange={this.handleChange}>
-                    <option value="hardcore">hardcore (3d6)</option>
-                    <option value="classic">classic (4d6d1)</option>
+                    <option value='hardcore'>hardcore (3d6)</option>
+                    <option value='classic'>classic (4d6d1)</option>
                 </select>
                 <div>
-                    <input type="text" value={this._name} onChange={this.handleNameChange}></input>
+                    <input type='text' value={this._name} onChange={this.handleNameChange}></input>
                 </div>
             </Panel>
         );
@@ -64,7 +65,8 @@ class StatBlock extends React.Component {
 
 StatBlock.propTypes = {
     onRoll: PropTypes.func.isRequired,
-    characterStats: PropTypes.object.isRequired,
+    stats: PropTypes.object.isRequired,
+    mods: PropTypes.object.isRequired,
     onNameChange: PropTypes.func.isRequired
 }
 

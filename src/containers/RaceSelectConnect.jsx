@@ -11,13 +11,13 @@ const mapStateToProps = state => {
 }
 
 const mapDispatchToProps = dispatch => ({
-    _initRaceState: (type) => {
-      (_raceData(dispatch, type))
-    },
-    onRaceChange: (type) => {
-      (setRace(dispatch, type))
-    }
-  })
+  _initRaceState: (type) => {
+    (_raceData(dispatch, type))
+  },
+  onRaceChange: (type, obj) => {
+    (setRace(dispatch, { type, obj }))
+  }
+})
 
 export default connect(
   mapStateToProps,

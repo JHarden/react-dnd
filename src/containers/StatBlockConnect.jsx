@@ -4,7 +4,8 @@ import StatBlock from '../components/StatBlock/StatBlock'
 
 const mapStateToProps = state => {
   return {
-    characterStats: state.characterStats,
+    stats: state.characterStats.attributes,
+    mods: state.characterStats.modifiers,
     name: state.characterGeneral
   }
 }

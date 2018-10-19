@@ -8,7 +8,7 @@ class RacialAttributes extends React.Component {
 	}
 
 	render() {
-		// const traits = this.props.selectedRaceTraits && this.props.selectedRaceTraits.traits;
+		// const traits = this.props.selectedRacialAttributes && this.props.selectedRacialAttributes.attributes;
 		return (
 			<div>
 			

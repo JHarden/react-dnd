@@ -12,7 +12,7 @@ function characterGeneral(state = initialState, action) {
         })
         case 'SET_RACE':
         return Object.assign({}, state, {
-            race: action.race
+            race: action.race.type
         })
         default: 
             return state;
