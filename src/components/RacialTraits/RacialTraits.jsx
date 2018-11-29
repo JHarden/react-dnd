@@ -47,7 +47,6 @@ class RacialTraits extends React.Component {
 		return (
 			<div>
 				<div>{this.props.selectedRace}</div>
-				<RacialAttributes selectedRacialAttributes={traits}/>
 				<div>
 					{this.props.selectedRaceTraits &&
 						<div>
@@ -56,6 +55,7 @@ class RacialTraits extends React.Component {
 						</div>
 					}
 				</div>
+				<RacialAttributes selectedRacialAttributes={traits}/>
 			</div>
 		)
 
