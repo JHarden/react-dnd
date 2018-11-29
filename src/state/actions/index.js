@@ -40,8 +40,16 @@ export const setName = (dispatch, name) => {
 }
 
 export const setRace = (dispatch, obj) => {
-	console.log('setRace: ', obj.obj);
-	const stats = obj.obj.traits.attributes.ability_racial;
+	const base = {
+		str: 0,
+		dex: 0,
+		con: 0,
+		int: 0,
+		wiz: 0,
+		cha: 0,
+	}
+	const stats = {...base , ...obj.obj.traits.attributes.ability_racial};
+
 	setStat(dispatch, stats);
 
 	dispatch({
